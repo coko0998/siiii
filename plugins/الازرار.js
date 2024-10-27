@@ -25,45 +25,51 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
 
-    await conn.sendMessage(m.chat, { react: { text: '🗒', key: m.key } });
+    await conn.sendMessage(m.chat, { react: { text: '📂', key: m.key } });
 
     const images = [
-      https://telegra.ph/file/8565f5591f7bb331c7ed6.mp4';
-     
-   
+        'https://qu.ax/DpNP.jpg',
+        'https://qu.ax/mdoS.jpg',
+        'https://qu.ax/fGZR.jpg',
       
     ];
 
     const randomImage = images[Math.floor(Math.random() * images.length)];
 
     var messa = await prepareWAMessageMedia({ image: { url: randomImage } }, { upload: conn.waUploadToServer });
-await conn.sendMessage(m.chat, { text: '*🌹صلي علي النبي🌺*' }, { quoted: global.fcontact });
+await conn.sendMessage(m.chat, { text: '*جاري تحضير قائمة الاوامر*' }, { quoted: global.fcontact });
     await new Promise(resolve => setTimeout(resolve, 1000));
     conn.relayMessage(m.chat, {
         viewOnceMessage: {
             message: {
                 interactiveMessage: {
                     body: {
-                        text: `> *🤍─[مرحبا بك ]────╮*
-> *┤ *نورت ${taguser}*
-> *┤ ✅ الاصدار: 1.2.0* 
+                        text: `> *✧────[ 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 ]────╮*
+> *┤ *مرحبا يا ${taguser}*
+> *┤ 🤴🏻 المطور: MOHAMMED ADEL*
+> *┤ #️⃣ الرقم: wa.me/249111230420*
+> *┤ ✅ الاصدار: 1.2.0*
+> *┤ 🎳 البادئة: •*
+> *┤ 🧜🏽‍♂️ المستخدمين: ${rtotalreg}*  
 > *┤────────────···*
-> *✧────[معـلـومـات الـمسـتـخـدم✴️]────╮*
-> *┤ 🌟 *الاسـم: ${name}*
-> *┤ 📈 المستوي: ${level}*
+> *✧────[معـلـومـات الـمسـتـخـدم]────╮*
+> *┤ 🎩 *الاسـم: ${name}*
+> *┤ 🔃 المستوي: ${level}*
 > *┤ 🏆 *الـرتبة: ${role}*
-> *┤ 💵 *نقودك: ${money}*
-> *┤ 💎*الألـماس: ${diamond}* 
+> *┤ 🎮 *الخبـرة: ${exp}* 
+> *┤ 💎 *الألـماس: ${diamond}* 
+> *┤ 🪙 *ميدو كوينز: ${money}*
+> *┤ 🎟️ *الرموز: ${joincount}*
 > *┤ 🌟 *الـبـرﯾـمـيـوم: ${user.premiumTime > 0 ? 'مـمـيز✅' : (isPrems ? 'مـمـيز ✅' : 'عـادي ❌') || ''}* 
 > *┤────────────···* 
 > *✧────[ الـوقـت والـتـاريـخ ]────╮*
-> *┤ 📅التاريخ: ${date}*
-> *┤ 🗓اليوم: ${week}*
-> *┤ ⏱️وقت النشاط: ${uptime}*
+> *┤ 📆 التاريخ: ${date}*
+> *┤ 📅 اليوم: ${week}*
+> *┤ 🚀 وقت النشاط: ${uptime}*
 > *┤────────────···*`
                     },
                     footer: {
-                        text: 'ᵐᵒʰᵃᵐᵐᵉᵈ ᵃᵈᵉˡ '
+                        text: 'MIDO '
                     },
                     header: {
                         title: '',
@@ -75,76 +81,75 @@ await conn.sendMessage(m.chat, { text: '*🌹صلي علي النبي🌺*' }, {
                             {
                                 name: 'single_select',
                                 buttonParamsJson: JSON.stringify({
-                                    title: '✨اختار قسم✨,
+                                    title: '『』القائمة《',
                                     sections: [
                                         {
-                                            title: '『』مرحبا بك في مهام بوت ميدو《',
-                                            highlight_label: '𝕄𝕆ℍ𝔸𝕄𝕄𝔼𝔻 𝔸𝔻𝔼𝕃 ',
+                                            title: '『』MENUS《',
+                                            highlight_label: 'OWNER',
                                             rows: [
                                                 {
-                                                    header: 'ميدو',
-                                                    title: '📡المطور📡',
+                                                    header: 'info',
+                                                    title: '⌬ ❛╏المطور',
                                                     description: '',
                                                     id: '.المطور'
                                                 },
                                                 {
-                                                    header: '🛜قسم التنزيلات🛜',
-                                                    title: '🔰التنزيلات🔰',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏التنزيلات',
                                                     description: '',
                                                     id: '.4',
                                                 },
                                                 {
-
-header: '🌹قسم الجروبات🌹',
-                                                    title: '🧸🎀 الجروبات🎀🧸',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏قائمه الجروب',
                                                     description: '',
                                                     id: '.5',
                                                 },
                                                 {
-                                                    header: '🎮قسم الالعاب🎮',
-                                                    title: '🎖الالعاب🎖',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏الالعاب',
                                                     description: '',
                                                     id: '.6',
                                                 },
                                                 {
-                                                    header: '💰قسم الترفيه💰',
-                                                    title: '🏅الترفيه🏅',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏الترفيه',
                                                     description: '',
                                                     id: '.6',
                                                 },
                                                 {
-                                                    header: '📷قسم الصور📷',
-                                                    title: '📸الصور📸',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏الصور',
                                                     description: '',
                                                     id: '.2',
                                                 },
                                                 {
-                                                    header: '🛠قسم الادوات🛠',
-                                                    title: '🔧الادوات🔧',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏الــادوات',
                                                     description: '',
                                                     id: '.7',
                                                 },
                                                 {
-                                                    header: '📖قسم الالقاب📖',
-                                                    title: '📚شرح الالقاب📚',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏شـرح الـالـقـاب',
                                                     description: '',
                                                     id: '.3',
                                                 },
                                                 {
-                                                    header: '🌟شروط ميدو🌟',
-                                                    title: '✴️الشروط✴️',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏شروط',
                                                     description: '',
                                                     id: '.20',
                                                 },
                                                 {
-                                                    header: '👑قسم الدعم👑',
-                                                    title: '🎶الدعم🎶',
+                                                    header: '『』MENU《',
+                                                    title: '⌬ ❛╏الدعم',
                                                     description: '',
                                                     id: '.الدعم',
                                                 },
                                                 {
-                                                    header: '🗒جميع الاوامر🗒 ',
-                                                    title: '📝كل اوامر البوت📝',
+                                                    header: '『』All MENU《',
+                                                    title: '⌬ ❛╏قائمة الاوامر',
                                                     description: '',
                                                     id: '.10',
                                                 },
@@ -156,20 +161,20 @@ header: '🌹قسم الجروبات🌹',
                             },
                             {
                                 name: "quick_reply",
-                                buttonParamsJson: "{\"display_text\":\"✨مطور البوت✨\",\"id\":\".المطور\"}"
+                                buttonParamsJson: "{\"display_text\":\"『』المطور《\",\"id\":\".المطور\"}"
                             },
                             {
                                 name: "cta_url",
-                                buttonParamsJson: "{\"display_text\":\" 👥قروب البوت👥 ",\"url\":\"https://chat.whatsapp.com/Gvj15Uocf6KDc2OUzgx06g\",\"merchant_url\":\"https://chat.whatsapp.com/Gvj15Uocf6KDc2OUzgx06g\"}"
+                                buttonParamsJson: "{\"display_text\":\"『』قروبي《\",\"url\":\"https://chat.whatsapp.com/Gvj15Uocf6KDc2OUzgx06g\",\"merchant_url\":\"https://chat.whatsapp.com/Gvj15Uocf6KDc2OUzgx06g\"}"
                             },
                             {
                                 name: "cta_url",
-                                buttonParamsJson: "{\"display_text\":\" 📝الموقع 📝\",\"url\":\"https://atom.bio/zyad_yasser\",\"merchant_url\":\"https://atom.bio/zyad_yasser\"}"
+                                buttonParamsJson: "{\"display_text\":\"『』موقعي《\",\"url\":\"https://atom.bio/zyad_yasser\",\"merchant_url\":\"https://atom.bio/zyad_yasser\"}"
                             },
                             {
                                 name: "cta_url",
                                 buttonParamsJson: JSON.stringify({
-                                    display_text: "💬قناة البوت💬",
+                                    display_text: "『』قناتي《",
                                     url: "https://whatsapp.com/channel/0029Vaich7vLdQeUgMMBPc13",
                                     merchant_url: "https://chat.whatsapp.com/GwpVRwW4o8z11bctqm9n7Q"
                                 })
