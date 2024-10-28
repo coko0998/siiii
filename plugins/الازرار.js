@@ -8,12 +8,12 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
     const mentionId = m.key.participant || m.key.remoteJid;
 
     if (device !== 'desktop' || device !== 'web') {      
-        var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/efb1c82a1c11caa338b8e.jpg'}}, { upload: conn.waUploadToServer })
+        var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://qu.ax/tBbcr.jpg'}}, { upload: conn.waUploadToServer })
         const interactiveMessage = {
             body: { text: `test`.trim() },
             footer: { text: `*𝐌𝐈𝐃𝐎 *`.trim() },  
             header: {
-                title: `*┃━━━━━⬣𝕄𝕆ℍ𝔸𝕄𝕄𝔼𝔻 𝔸𝔻𝔼𝕃⬣━━━━━┃*\n\n*◞❐نورت يا حب بوت استرو🤺🔥*\n\n*◞❐ تفضل القائمة يا  :* @${mentionId.split('@')[0]}\n\n*◞❐اسم البوت : بوت ميدو*\n\n*◞❐موقع التنصيب : heroku*\n\n*◞❐البوت يعمل في الخاص *\n\n*◞❐يمنع شتم البوت*\n\n*┃━━━━━⬣ᵐᵒʰᵃᵐᵐᵉᵈ ᵃᵈᵉˡ ⬣━━━━━┃*`,
+                title: `*┃━━━━━⬣𝕄𝕆ℍ𝔸𝕄𝕄𝔼𝔻 𝔸𝔻𝔼𝕃⬣━━━━━┃*\n\n*◞❐نورت يا حب بوت ميدو🤺🔥*\n\n*◞❐ تفضل القائمة يا  :* @${mentionId.split('@')[0]}\n\n*◞❐اسم البوت : بوت ميدو*\n\n*◞❐موقع التنصيب : heroku*\n\n*◞❐البوت يعمل في الخاص *\n\n*◞❐يمنع شتم البوت*\n\n*┃━━━━━⬣ᵐᵒʰᵃᵐᵐᵉᵈ ᵃᵈᵉˡ ⬣━━━━━┃*`,
                 subtitle: ``,
                 hasMediaAttachment: true,
                 imageMessage: joanimiimg.imageMessage,
