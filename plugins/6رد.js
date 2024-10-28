@@ -1,91 +1,78 @@
+import fetch from 'node-fetch';
 import fs from 'fs';
-const handler = (m) => m;
-handler.all = async function(m) {
+let handler = m => m;
 
-const sounds = [
-        "./media/احا.mp3",
-        "./media/احا1.mp3"
-    ];
+handler.all = async function (m, conn) {
+  console.log("Handler invoked");
 
-const sounds2 = [
-        "./media/بضاني.mp3",
-        "./media/من انت.mp3"
-    ];
+  // منع البوت من الرد على نفسه
+  if (m.fromMe) return;
 
-const sounds3 = [
-        "./media/انها المخدرات.mp3",
-        "./media/ولا ايه.mp3"
-    ];
-const sounds4 = "./media/الصدمه.mp3";
-const sounds5 = "./media/اسمع.mp3";
-const sounds6 = "./media/اقلعي.mp3";
-
-  const chat = global.db.data.chats[m.chat];
+  const fakecontact = { 'key': { 'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': '• 𝙱𝙾𝚃 𝙴𝙻𝚃𝙰𝚁𝙱𝙾𝙾 | 🐼❤️) ء' }, 'message': { 'contactMessage': { 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } }, 'participant': '0@s.whatsapp.net' };
   
-    const fk = {
-    'key': {
-      'participants': '0@s.whatsapp.net',
-      'remoteJid': 'status@broadcast',
-      'fromMe': false,
-      'id': 'Halo'
-    },
-    'message': {
-      'contactMessage': {
-        'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+  const vn = './media/الكلب.mp3'; //src sounds
+  const vn2 = './media/سقيتك كاس.mp3'; 
+  
+  let num = "249128749239"; //number owner
+  let num2 = "249111230420"; //number bot
+  let sender = m.sender.split('@')[0];
+  let ownerJid = num + '@s.whatsapp.net'; // JID of the owner
+  let ownerName = "اسم المطور"; // اسم المطور
+
+  const ownerReplies = [
+    `*عاوز اي من مطوري يا {@${m.pushName}} 🤨*`,
+    `*ايه يا معلم، عاوز اي من المطور؟{${m.pushName}}*`,
+  ];
+
+  const botReplies = [
+    `*احمم أنا هنا يا قلبي 👾*`,
+    `*ايوا يا {${m.pushName}} عاوز أي 👀*`,
+    `*انا في الخدمة يا {${m.pushName}}*`,
+  ];
+
+  let usedOwnerReplies = new Set();
+  let usedBotReplies = new Set();
+
+  function getRandomReply(replies, usedReplies) {
+    if (usedReplies.size === replies.length) {
+      usedReplies.clear(); // Reset if all replies have been used
+    }
+    let reply;
+    do {
+      reply = replies[Math.floor(Math.random() * replies.length)];
+    } while (usedReplies.has(reply));
+    usedReplies.add(reply);
+    return reply;
+  }
+  
+  if (m.mentionedJid && m.mentionedJid[0]) {
+    let taguser = m.mentionedJid[0].split('@')[0];
+
+    let phoneNumber = m.mentionedJid[0].replace(/[^0-9]/g, '');
+    console.log(`Mentioned phone number: ${phoneNumber}`);
+    
+    if (phoneNumber === num) {
+      console.log("Owner mentioned");
+      await this.sendMessage(m.chat, {audio: {url: vn2}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fakecontact});
+      await this.sendMessage(m.chat, {text: getRandomReply(ownerReplies, usedOwnerReplies)}, {quoted: fakecontact, mentions: [ownerJid]});
+      return;
+    } else if (phoneNumber === num2) {
+      console.log("Bot mentioned");
+      if (sender === num) {
+        console.log("Owner is the sender");
+        await this.sendMessage(m.chat, {text: '*احمم أنا هنا ي قلبي 👾*'}, {quoted: fakecontact});
+        return;
+      } else {
+        console.log("Bot is mentioned by someone else");
+        await this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fakecontact});
+        await this.sendMessage(m.chat, {text: getRandomReply(botReplies, usedBotReplies)}, {quoted: fakecontact});
+        return;
       }
-    },
-    'participant': '0@s.whatsapp.net'
-  };
-
-  if (/^احا|احيه$/i.test(m.text) && !chat.isBanned && chat.audios) {
-
-const vn = sounds[Math.floor(Math.random() * sounds.length)];
-
- conn.sendPresenceUpdate('recording', m.chat);
-    
-m.conn.sendMessage(m.chat, {audio: {url: vn}, fileName: 'sound.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fk});
-  
-  } else if (/^شخره|خخ$/i.test(m.text) && !chat.isBanned && chat.audios) {
-
-const vn = sounds2[Math.floor(Math.random() * sounds2.length)];
-
- conn.sendPresenceUpdate('recording', m.chat);
-    
-m.conn.sendMessage(m.chat, {audio: {url: vn}, fileName: 'sound.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fk});
-
-} else if (/^ههه|ضحك|😂$/i.test(m.text) && !chat.isBanned && chat.audios) {
-
-const vn = sounds3[Math.floor(Math.random() * sounds3.length)];
-
- conn.sendPresenceUpdate('recording', m.chat);
-    
-m.conn.sendMessage(m.chat, {audio: {url: vn}, fileName: 'sound.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fk});
-
-} else if (/^صدمه|تبا|🙂$/i.test(m.text) && !chat.isBanned && chat.audios) {
-
-const vn = sounds4;
-
- conn.sendPresenceUpdate('recording', m.chat);
-    
-m.conn.sendMessage(m.chat, {audio: {url: vn}, fileName: 'sound.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fk});
-
-} else if (/^بقولك|قول$/i.test(m.text) && !chat.isBanned && chat.audios) {
-
-const vn = sounds5;
-
- conn.sendPresenceUpdate('recording', m.chat);
-    
-m.conn.sendMessage(m.chat, {audio: {url: vn}, fileName: 'sound.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fk});
-
-} else if (/^خد|اقلع|بعبص$/i.test(m.text) && !chat.isBanned && chat.audios) {
-
-const vn = sounds6;
-
- conn.sendPresenceUpdate('recording', m.chat);
-    
-m.conn.sendMessage(m.chat, {audio: {url: vn}, fileName: 'sound.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: fk});
-
+    } 
+  } else {
+    console.log("No one mentioned");
+    return;
+  }
 }
-  return !0;
-};
+
 export default handler;
