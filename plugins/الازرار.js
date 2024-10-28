@@ -1,194 +1,176 @@
-import pkg from '@whiskeysockets/baileys';
-const { generateWAMessageFromContent, proto, prepareWAMessageMedia } = pkg;
+//Copyright ©JOANIMI/KILLUA
+//https://whatsapp.com/channel/0029Vab5oDNElagpHtJjmT0B
 
-function clockString(ms) {
-    let h = Math.floor(ms / 3600000);
-    let m = Math.floor(ms % 3600000 / 60000);
-    let s = Math.floor(ms % 60000 / 1000);
-    return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':');
-}
+import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '@whiskeysockets/baileys'
 
-const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
-    let d = new Date(new Date() + 3600000);
-    let locale = 'ar';
-    let week = d.toLocaleDateString(locale, { weekday: 'long' });
-    let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
-    let _uptime = process.uptime() * 1000;
-    let uptime = clockString(_uptime);
-    let user = global.db.data.users[m.sender];
-    let name = conn.getName(m.sender);
-    let { money, joincount, diamond } = user;
-    let { exp, limit, level, role } = user;
-    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered === true).length;
-    let more = String.fromCharCode(8206);
-    let readMore = more.repeat(850);
-    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
-    let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
+const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
+    const device = await getDevice(m.key.id);
+    const mentionId = m.key.participant || m.key.remoteJid;
 
-    await conn.sendMessage(m.chat, { react: { text: '📂', key: m.key } });
-
-    const images = [
-        'https://qu.ax/DpNP.jpg',
-        'https://qu.ax/mdoS.jpg',
-        'https://qu.ax/fGZR.jpg',
-      
-    ];
-
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-
-    var messa = await prepareWAMessageMedia({ image: { url: randomImage } }, { upload: conn.waUploadToServer });
-await conn.sendMessage(m.chat, { text: '*جاري تحضير قائمة الاوامر*' }, { quoted: global.fcontact });
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    conn.relayMessage(m.chat, {
-        viewOnceMessage: {
-            message: {
-                interactiveMessage: {
-                    body: {
-                        text: `> *✧────[ 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 ]────╮*
-> *┤ *مرحبا يا ${taguser}*
-> *┤ 🤴🏻 المطور: MOHAMMED ADEL*
-> *┤ #️⃣ الرقم: wa.me/249111230420*
-> *┤ ✅ الاصدار: 1.2.0*
-> *┤ 🎳 البادئة: •*
-> *┤ 🧜🏽‍♂️ المستخدمين: ${rtotalreg}*  
-> *┤────────────···*
-> *✧────[معـلـومـات الـمسـتـخـدم]────╮*
-> *┤ 🎩 *الاسـم: ${name}*
-> *┤ 🔃 المستوي: ${level}*
-> *┤ 🏆 *الـرتبة: ${role}*
-> *┤ 🎮 *الخبـرة: ${exp}* 
-> *┤ 💎 *الألـماس: ${diamond}* 
-> *┤ 🪙 *ميدو كوينز: ${money}*
-> *┤ 🎟️ *الرموز: ${joincount}*
-> *┤ 🌟 *الـبـرﯾـمـيـوم: ${user.premiumTime > 0 ? 'مـمـيز✅' : (isPrems ? 'مـمـيز ✅' : 'عـادي ❌') || ''}* 
-> *┤────────────···* 
-> *✧────[ الـوقـت والـتـاريـخ ]────╮*
-> *┤ 📆 التاريخ: ${date}*
-> *┤ 📅 اليوم: ${week}*
-> *┤ 🚀 وقت النشاط: ${uptime}*
-> *┤────────────···*`
-                    },
-                    footer: {
-                        text: 'MIDO '
-                    },
-                    header: {
-                        title: '',
-                        hasMediaAttachment: true,
-                        imageMessage: messa.imageMessage,
-                    },
-                    nativeFlowMessage: {
-                        buttons: [
-                            {
-                                name: 'single_select',
-                                buttonParamsJson: JSON.stringify({
-                                    title: '『』القائمة《',
-                                    sections: [
-                                        {
-                                            title: '『』MENUS《',
-                                            highlight_label: 'OWNER',
-                                            rows: [
-                                                {
-                                                    header: 'info',
-                                                    title: '⌬ ❛╏المطور',
-                                                    description: '',
-                                                    id: '.المطور'
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏التنزيلات',
-                                                    description: '',
-                                                    id: '.4',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏قائمه الجروب',
-                                                    description: '',
-                                                    id: '.5',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏الالعاب',
-                                                    description: '',
-                                                    id: '.6',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏الترفيه',
-                                                    description: '',
-                                                    id: '.6',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏الصور',
-                                                    description: '',
-                                                    id: '.2',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏الــادوات',
-                                                    description: '',
-                                                    id: '.7',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏شـرح الـالـقـاب',
-                                                    description: '',
-                                                    id: '.3',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏شروط',
-                                                    description: '',
-                                                    id: '.20',
-                                                },
-                                                {
-                                                    header: '『』MENU《',
-                                                    title: '⌬ ❛╏الدعم',
-                                                    description: '',
-                                                    id: '.الدعم',
-                                                },
-                                                {
-                                                    header: '『』All MENU《',
-                                                    title: '⌬ ❛╏قائمة الاوامر',
-                                                    description: '',
-                                                    id: '.10',
-                                                },
-                                            ]
-                                        }
-                                    ]
-                                }),
-                                messageParamsJson: '𝑀𝑂𝐻𝐴𝑀𝑀𝐸𝐷'
-                            },
-                            {
-                                name: "quick_reply",
-                                buttonParamsJson: "{\"display_text\":\"『』المطور《\",\"id\":\".المطور\"}"
-                            },
-                            {
-                                name: "cta_url",
-                                buttonParamsJson: "{\"display_text\":\"『』قروبي《\",\"url\":\"https://chat.whatsapp.com/Gvj15Uocf6KDc2OUzgx06g\",\"merchant_url\":\"https://chat.whatsapp.com/Gvj15Uocf6KDc2OUzgx06g\"}"
-                            },
-                            {
-                                name: "cta_url",
-                                buttonParamsJson: "{\"display_text\":\"『』موقعي《\",\"url\":\"https://atom.bio/zyad_yasser\",\"merchant_url\":\"https://atom.bio/zyad_yasser\"}"
-                            },
-                            {
-                                name: "cta_url",
-                                buttonParamsJson: JSON.stringify({
-                                    display_text: "『』قناتي《",
-                                    url: "https://whatsapp.com/channel/0029Vaich7vLdQeUgMMBPc13",
-                                    merchant_url: "https://chat.whatsapp.com/GwpVRwW4o8z11bctqm9n7Q"
-                                })
-                            }
-                        ]
-                    }
-                }
+    if (device !== 'desktop' || device !== 'web') {      
+        var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/efb1c82a1c11caa338b8e.jpg'}}, { upload: conn.waUploadToServer })
+        const interactiveMessage = {
+            body: { text: `test`.trim() },
+            footer: { text: `*𝐌𝐈𝐃𝐎 *`.trim() },  
+            header: {
+                title: `*┃━━━━━⬣𝕄𝕆ℍ𝔸𝕄𝕄𝔼𝔻 𝔸𝔻𝔼𝕃⬣━━━━━┃*\n\n*◞❐نورت يا حب بوت استرو🤺🔥*\n\n*◞❐ تفضل القائمة يا  :* @${mentionId.split('@')[0]}\n\n*◞❐اسم البوت : بوت ميدو*\n\n*◞❐موقع التنصيب : heroku*\n\n*◞❐البوت يعمل في الخاص *\n\n*◞❐يمنع شتم البوت*\n\n*┃━━━━━⬣ᵐᵒʰᵃᵐᵐᵉᵈ ᵃᵈᵉˡ ⬣━━━━━┃*`,
+                subtitle: ``,
+                hasMediaAttachment: true,
+                imageMessage: joanimiimg.imageMessage,
+            },
+            nativeFlowMessage: {
+  						buttons: [
+  							{
+  								name: 'single_select',
+  						  	buttonParamsJson: JSON.stringify({
+  						  		title: '⌝اوامر البوت⌞',
+  						  		sections: [
+  						  			{
+  						  				title: 'List',
+  							  	    highlight_label: 'ON',
+  						  		    rows: [
+  						  		    	{
+  						  		    		header: '【..≼اوامر الجروبات≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼ الجروبات≽..】',
+  								    		  id: '.الجروب'
+  						  		    	}
+  						  		    ]
+  						  			},
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..≼اوامر الاعضاء≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼ الاعضاء≽..】',
+  								    		  id: '.الاعضاء'
+  						  		    	}
+  						  				]
+  						        	},
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..≼اوامر الانــمـــي≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼ الانــمـــي≽..】',
+  								    		  id: '.انيمي'
+  						  		    	}
+  						  				]
+                                    },
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..≼اوامر الترفيه≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼ الترفيه≽..】',
+  								    		  id: '.الترفيه'
+  						  		    	}
+  						  				]
+                                        },
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..≼اوامر الايديت والصور≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼ الايديت والصور≽..】',
+  								    		  id: '.الايديت'
+  						  		    	}
+  						  				]
+                                        },
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..≼اوامر التحويلات≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼التحويلات≽..】',
+  								    		  id: '.التحويلات'
+  						  		    	}
+  						  				]
+                                        },
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..≼اوامر الادوات ≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼الادوات≽..】',
+  								    		  id: '.الاداوات'
+  						  		    	}
+  						  				]
+                                        },
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..≼اوامر الدين≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',
+  									    	  description: '【..≼الدين≽..】',
+  								    		  id: '.الدين'
+  						  		    	}
+  						  				]
+                                        },
+  						  			{
+  						  				highlight_label: 'ON',
+  						  				rows: [
+  						  					{
+  						  		    		header: '【..اوامر الذكاء الاصطناعي ≽..】',
+  										      title: '𝐌𝐈𝐃𝐎',		 
+                                           	  description: '【..≼الذكاء الاصطناعي ≽..】',
+  								    		  id: '.ذكاءاصطناعي'
+  						  		    	}
+  						  				]
+  						  			}
+  						  		]
+  						  	})
+  							},
+                              {
+                                  name: 'quick_reply',
+                                  buttonParamsJson: JSON.stringify({
+                                      display_text: 'quick_reply',
+                                      id: `message`
+                                  })
+                              },
+                              {
+                                  name: 'cta_url',
+                                  buttonParamsJson: JSON.stringify({
+                                      display_text: 'قروب البوت 🌐',
+                                      url: 'https://chat.whatsapp.com/HEymhaMK6EfD4MRWj00juf',
+                                      merchant_url: ''
+                                  })
+                              },
+                              {
+                                  name: 'cta_call',
+                                  buttonParamsJson: JSON.stringify({
+                                      display_text: 'call',
+                                      id: 'message'
+                                  })
+                              },
+                              
+  			  		],
+                messageParamsJson: ''
             }
-        }
-    }, {});
-}
+        };        
 
-handler.help = ['info'];
-handler.tags = ['main'];
-handler.command = ['اوامر','الاوامر','menu','المهام'];
+        let msg = generateWAMessageFromContent(m.chat, {
+            viewOnceMessage: {
+                message: {
+                    interactiveMessage,
+                },
+            },
+        }, { userJid: conn.user.jid, quoted: m })
+        msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] };
+        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
 
+    } else {
+        conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
+    }    
+};
+handler.help = ['imgboton'];
+handler.tags = ['For Test'];
+handler.command = /^(اوامر|الاوامر|أوامر|الأوامر|menu)$/i;
 export default handler;
