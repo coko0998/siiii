@@ -1,1 +1,191 @@
-const _0x585def=_0x1288;(function(_0x2584a7,_0x5eed08){const _0x6f3fa2=_0x1288,_0x3f6a95=_0x2584a7();while(!![]){try{const _0x59beac=parseInt(_0x6f3fa2(0xc1))/0x1+-parseInt(_0x6f3fa2(0xee))/0x2*(-parseInt(_0x6f3fa2(0xec))/0x3)+-parseInt(_0x6f3fa2(0xed))/0x4*(-parseInt(_0x6f3fa2(0xd3))/0x5)+-parseInt(_0x6f3fa2(0xc5))/0x6*(parseInt(_0x6f3fa2(0xfa))/0x7)+-parseInt(_0x6f3fa2(0xd2))/0x8+-parseInt(_0x6f3fa2(0xba))/0x9*(parseInt(_0x6f3fa2(0xae))/0xa)+parseInt(_0x6f3fa2(0xa4))/0xb;if(_0x59beac===_0x5eed08)break;else _0x3f6a95['push'](_0x3f6a95['shift']());}catch(_0x2f50b8){_0x3f6a95['push'](_0x3f6a95['shift']());}}}(_0x3506,0x79771));const _0x394199=(function(){let _0x48896c=!![];return function(_0x597ec0,_0x4de159){const _0x21c64e=_0x48896c?function(){const _0x4bd9e9=_0x1288;if(_0x4de159){const _0x292503=_0x4de159[_0x4bd9e9(0xcd)](_0x597ec0,arguments);return _0x4de159=null,_0x292503;}}:function(){};return _0x48896c=![],_0x21c64e;};}()),_0x1af742=_0x394199(this,function(){const _0x432553=_0x1288;return _0x1af742[_0x432553(0x94)]()['search'](_0x432553(0xf5))[_0x432553(0x94)]()['constructor'](_0x1af742)[_0x432553(0xbe)]('(((.+)+)+)+$');});_0x1af742();const _0x5d0d87=(function(){let _0x3efa6b=!![];return function(_0x2c6c6e,_0x260460){const _0x457f98=_0x3efa6b?function(){if(_0x260460){const _0x3defdb=_0x260460['apply'](_0x2c6c6e,arguments);return _0x260460=null,_0x3defdb;}}:function(){};return _0x3efa6b=![],_0x457f98;};}()),_0x687d5f=_0x5d0d87(this,function(){const _0x18b5fb=_0x1288,_0x4ce633=function(){const _0x3c386d=_0x1288;let _0x58dbe5;try{_0x58dbe5=Function(_0x3c386d(0xf2)+_0x3c386d(0xb8)+');')();}catch(_0x57531c){_0x58dbe5=window;}return _0x58dbe5;},_0x4cf6f2=_0x4ce633(),_0x23e5ea=_0x4cf6f2[_0x18b5fb(0xd5)]=_0x4cf6f2['console']||{},_0x283f29=[_0x18b5fb(0xb9),_0x18b5fb(0xf4),'info',_0x18b5fb(0xc7),_0x18b5fb(0xcb),_0x18b5fb(0xe8),_0x18b5fb(0xc4)];for(let _0x21c637=0x0;_0x21c637<_0x283f29[_0x18b5fb(0xef)];_0x21c637++){const _0xa0caa5=_0x5d0d87[_0x18b5fb(0xc0)]['prototype'][_0x18b5fb(0xd6)](_0x5d0d87),_0x84120f=_0x283f29[_0x21c637],_0x87ce4=_0x23e5ea[_0x84120f]||_0xa0caa5;_0xa0caa5[_0x18b5fb(0x97)]=_0x5d0d87[_0x18b5fb(0xd6)](_0x5d0d87),_0xa0caa5[_0x18b5fb(0x94)]=_0x87ce4[_0x18b5fb(0x94)][_0x18b5fb(0xd6)](_0x87ce4),_0x23e5ea[_0x84120f]=_0xa0caa5;}});function _0x3506(){const _0x353a21=['splice','off','output','hex','indexOf','toString','../handler.js','argv','__proto__','bye','plz','👇🏻✨','sdemote','statusCode','includes','rowner','split','stdin','jid','\x22هذا\x20الأمر\x20يمكن\x20استخدامه\x20فقط\x20من\x20قبل\x20الروبوت\x20الرئيسي.\x22\x20wa.me/','sercode','9532567jkEImp','message.delete','credsUpdate','connectionUpdate','onCall','existsSync','onDelete','slice','socket','readFileSync','650qlXdNu','close','مرحبا!\x20يسرنا\x20أنك\x20ستستخدم\x20البوت\x20الخاص\x20بنا.\x20هذا\x20هو\x20الكود\x20لربط\x20البوت\x20على\x20رقمك.\x20قم\x20بنسخه\x20و\x20ادخل\x20الكود\x20في\x20المكان\x20المناسب\x20في\x20الإشعار\x20الذي\x20سوف\x20يصلك','تنصيب','keys','child','removeAllListeners','createInterface','sendMessage','join','{}.constructor(\x22return\x20this\x22)(\x20)','log','107901HWaLCM','participantsUpdate','message','يتم\x20تحميل\x20البوت\x20على\x20هذا\x20الجهاز...','search','loggedOut','constructor','480759vTvDPf','?text=','data','trace','24NhgYJc','chat','error','randomBytes','conn','\x20تم\x20الإتصال\x20بالسيرفر\x20\x0a\x20\x0a\x20مرحبا\x20بك\x20في\x20البوت\x20مدعوم\x20بالكثير\x20من\x20الخصائص\x20كا\x20صناعة\x20الصور\x20وارسال\x20التطبيقات\x20والفيديوهات\x20وكل\x20مايخص\x20المستخدم\x20\x0a\x0a','exception','20.0.04','apply','stringify','tags','replace','code','7321280GiaQkh','5bDzKKr','creds','console','bind','exit','connection.update','connectionClosed','user','help','fatal','group-participants.update','base64','handler','messages.upsert','groups.update','./jadibts/','codigo','deleteUpdate','انسخ\x20الرساله','silent','now','table','mobile','\x20\x22اتصال\x20مفقود،\x20يتم\x20إعادة\x20الاتصال\x22','\x20يتم\x20إعادة\x20الإتصال','3cRctgJ','3418032yOwmvM','180508Orgagh','length','conns','registered','return\x20(function()\x20','catch','warn','(((.+)+)+)+$','groupsUpdate','command','isInit','Ubuntu','175266VtZvLt','Chrome','welcome','spromote','creds.update','jadibot'];_0x3506=function(){return _0x353a21;};return _0x3506();}function _0x1288(_0x199dfc,_0x5785cd){const _0x261a0b=_0x3506();return _0x1288=function(_0x687d5f,_0x5d0d87){_0x687d5f=_0x687d5f-0x94;let _0x3bca7e=_0x261a0b[_0x687d5f];return _0x3bca7e;},_0x1288(_0x199dfc,_0x5785cd);}_0x687d5f();const {useMultiFileAuthState,DisconnectReason,fetchLatestBaileysVersion,MessageRetryMap,makeCacheableSignalKeyStore,jidNormalizedUser,PHONENUMBER_MCC}=await import('@whiskeysockets/baileys');import'moment-timezone';import _0x4da1b8 from'node-cache';import _0x275b76 from'readline';import'qrcode';import _0x313813 from'crypto';import _0x2ff770 from'fs';import _0x112583 from'pino';import'ws';import'@hapi/boom';import{makeWASocket}from'../lib/simple.js';global[_0x585def(0xf0)]instanceof Array?console['log']():global[_0x585def(0xf0)]=[];let joanimi=async(_0x4fa276,{conn:_0x21439f,args:_0x44aa52,usedPrefix:_0x14f23f,command:_0x1c4e54,isOwner:_0x33ec41})=>{const _0x394524=_0x585def;let _0x583368=_0x44aa52[0x0]&&_0x44aa52[0x0]==='plz'?_0x21439f:await global[_0x394524(0xc9)];if(!(_0x44aa52[0x0]&&_0x44aa52[0x0]===_0x394524(0x99)||(await global[_0x394524(0xc9)])[_0x394524(0xda)][_0x394524(0xa1)]===_0x21439f[_0x394524(0xda)][_0x394524(0xa1)]))throw _0x394524(0xa2)+global[_0x394524(0xc9)][_0x394524(0xda)][_0x394524(0xa1)]['split']`@`[0x0]+_0x394524(0xc2)+_0x14f23f+_0x1c4e54;async function _0xf549a2(){const _0x528eb=_0x394524;let _0x3e37d0=_0x313813[_0x528eb(0xc8)](0xa)[_0x528eb(0x94)](_0x528eb(0x103))[_0x528eb(0xab)](0x0,0x8);!_0x2ff770[_0x528eb(0xa9)](_0x528eb(0xe2)+_0x3e37d0)&&_0x2ff770['mkdirSync'](_0x528eb(0xe2)+_0x3e37d0,{'recursive':!![]});_0x44aa52[0x0]&&_0x2ff770['writeFileSync'](_0x528eb(0xe2)+_0x3e37d0+'/creds.json',JSON[_0x528eb(0xce)](JSON['parse'](Buffer['from'](_0x44aa52[0x0],_0x528eb(0xde))[_0x528eb(0x94)]('utf-8')),null,'\x09'));const {state:_0x42516e,saveState:_0x380ee5,saveCreds:_0x49e812}=await useMultiFileAuthState(_0x528eb(0xe2)+_0x3e37d0),_0x2e9cd2=()=>{},_0x53b78d=new _0x4da1b8(),{version:_0x3e2c5d}=await fetchLatestBaileysVersion();let _0x37a33a=_0x4fa276['sender'][_0x528eb(0x9f)]('@')[0x0];const _0x40b57c=!!_0x37a33a||process[_0x528eb(0x96)][_0x528eb(0x9d)](_0x528eb(0xd1)),_0x2b368c=process[_0x528eb(0x96)]['includes'](_0x528eb(0xe9)),_0x137eff=_0x275b76[_0x528eb(0xb5)]({'input':process[_0x528eb(0xa0)],'output':process['stdout']}),_0x4a0976={'logger':_0x112583({'level':_0x528eb(0xe6)}),'printQRInTerminal':![],'mobile':_0x2b368c,'browser':[_0x528eb(0xf9),_0x528eb(0xfb),_0x528eb(0xcc)],'auth':{'creds':_0x42516e[_0x528eb(0xd4)],'keys':makeCacheableSignalKeyStore(_0x42516e[_0x528eb(0xb2)],_0x112583({'level':_0x528eb(0xdc)})[_0x528eb(0xb3)]({'level':_0x528eb(0xdc)}))},'markOnlineOnConnect':!![],'generateHighQualityLinkPreview':!![],'getMessage':async _0x3fbde7=>{const _0x48ed85=_0x528eb;let _0x130839=jidNormalizedUser(_0x3fbde7['remoteJid']),_0x363768=await store['loadMessage'](_0x130839,_0x3fbde7['id']);return _0x363768?.[_0x48ed85(0xbc)]||'';},'msgRetryCounterCache':_0x53b78d,'msgRetryCounterMap':_0x2e9cd2,'defaultQueryTimeoutMs':undefined,'version':_0x3e2c5d};let _0x30d8ea=makeWASocket(_0x4a0976);if(_0x40b57c&&!_0x30d8ea['authState'][_0x528eb(0xd4)][_0x528eb(0xf1)]){if(!_0x37a33a)process[_0x528eb(0xd7)](0x0);let _0x381623=_0x37a33a[_0x528eb(0xd0)](/[^0-9]/g,'');if(!Object[_0x528eb(0xb2)](PHONENUMBER_MCC)['some'](_0x521579=>_0x381623['startsWith'](_0x521579)))process[_0x528eb(0xd7)](0x0);setTimeout(async()=>{const _0x52e215=_0x528eb;let _0x36e888=await _0x30d8ea['requestPairingCode'](_0x381623);_0x36e888=_0x36e888?.['match'](/.{1,4}/g)?.[_0x52e215(0xb7)]('-')||_0x36e888,_0x583368['sendButton'](_0x4fa276[_0x52e215(0xc6)],_0x52e215(0xb0),_0x52e215(0x9a),'https://telegra.ph/file/f6f26c3ddf1c1c03a52a4.png',[[''+_0x36e888,_0x52e215(0xe5)],['اطلب\x20الكود\x20مره\x20ثانيه',''+(_0x14f23f+_0x1c4e54)]],null,null,_0x4fa276),_0x137eff[_0x52e215(0xaf)]();},0xbb8);}_0x30d8ea[_0x528eb(0xf8)]=![];let _0x204a7d=!![];async function _0x18959c(_0x5632e8){const _0x2134b9=_0x528eb,{connection:_0x395136,lastDisconnect:_0x176324,isNewLogin:_0x224c07,qr:_0x33c5f6}=_0x5632e8;if(_0x224c07)_0x30d8ea[_0x2134b9(0xf8)]=!![];const _0x577ad2=_0x176324?.[_0x2134b9(0xc7)]?.[_0x2134b9(0x102)]?.[_0x2134b9(0x9c)]||_0x176324?.['error']?.[_0x2134b9(0x102)]?.['payload']?.['statusCode'];if(_0x577ad2&&_0x577ad2!==DisconnectReason[_0x2134b9(0xbf)]&&_0x30d8ea?.['ws'][_0x2134b9(0xac)]==null){let _0x59f194=global[_0x2134b9(0xf0)][_0x2134b9(0x104)](_0x30d8ea);if(_0x59f194<0x0)return console[_0x2134b9(0xb9)](await _0x4baf41(!![])['catch'](console['error']));delete global[_0x2134b9(0xf0)][_0x59f194],global[_0x2134b9(0xf0)][_0x2134b9(0x100)](_0x59f194,0x1),_0x577ad2!==DisconnectReason[_0x2134b9(0xd9)]?_0x583368[_0x2134b9(0xb6)](_0x30d8ea[_0x2134b9(0xda)][_0x2134b9(0xa1)],{'text':_0x2134b9(0xea)},{'quoted':_0x4fa276}):_0x583368[_0x2134b9(0xb6)](_0x4fa276[_0x2134b9(0xc6)],{'text':_0x2134b9(0xeb)},{'quoted':_0x4fa276});}if(global['db'][_0x2134b9(0xc3)]==null)loadDatabase();if(_0x395136=='open'){_0x30d8ea[_0x2134b9(0xf8)]=!![],global['conns']['push'](_0x30d8ea),await _0x583368[_0x2134b9(0xb6)](_0x4fa276[_0x2134b9(0xc6)],{'text':_0x44aa52[0x0]?_0x2134b9(0xca):'\x20جاري\x20الإتصال\x20بالبوت\x20الرئيسي'},{'quoted':_0x4fa276}),await sleep(0x1388);if(_0x44aa52[0x0])return;await _0x583368[_0x2134b9(0xb6)](_0x30d8ea[_0x2134b9(0xda)][_0x2134b9(0xa1)],{'text':_0x2134b9(0xbd)},{'quoted':_0x4fa276}),_0x583368[_0x2134b9(0xb6)](_0x30d8ea[_0x2134b9(0xda)][_0x2134b9(0xa1)],{'text':''+_0x14f23f+_0x1c4e54+'\x20'+Buffer['from'](_0x2ff770[_0x2134b9(0xad)]('./jadibts/'+_0x3e37d0+'/creds.json'),'utf-8')[_0x2134b9(0x94)](_0x2134b9(0xde))},{'quoted':_0x4fa276});}}setInterval(async()=>{const _0x80e458=_0x528eb;if(!_0x30d8ea[_0x80e458(0xda)]){try{_0x30d8ea['ws']['close']();}catch{}_0x30d8ea['ev'][_0x80e458(0xb4)]();let _0x3a65b1=global['conns'][_0x80e458(0x104)](_0x30d8ea);if(_0x3a65b1<0x0)return;delete global[_0x80e458(0xf0)][_0x3a65b1],global[_0x80e458(0xf0)][_0x80e458(0x100)](_0x3a65b1,0x1);}},0xea60);let _0x4e0dc5=await import(_0x528eb(0x95)),_0x4baf41=async function(_0x490762){const _0x1934a4=_0x528eb;try{const _0x2de828=await import('../handler.js?update='+Date[_0x1934a4(0xe7)]())[_0x1934a4(0xf3)](console[_0x1934a4(0xc7)]);if(Object[_0x1934a4(0xb2)](_0x2de828||{})[_0x1934a4(0xef)])_0x4e0dc5=_0x2de828;}catch(_0x3a3d4b){console[_0x1934a4(0xc7)](_0x3a3d4b);}if(_0x490762){try{_0x30d8ea['ws'][_0x1934a4(0xaf)]();}catch{}_0x30d8ea['ev']['removeAllListeners'](),_0x30d8ea=makeWASocket(_0x4a0976),_0x204a7d=!![];}return!_0x204a7d&&(_0x30d8ea['ev']['off'](_0x1934a4(0xe0),_0x30d8ea['handler']),_0x30d8ea['ev'][_0x1934a4(0x101)](_0x1934a4(0xdd),_0x30d8ea[_0x1934a4(0xbb)]),_0x30d8ea['ev'][_0x1934a4(0x101)](_0x1934a4(0xe1),_0x30d8ea[_0x1934a4(0xf6)]),_0x30d8ea['ev'][_0x1934a4(0x101)](_0x1934a4(0xa5),_0x30d8ea[_0x1934a4(0xaa)]),_0x30d8ea['ev']['off']('call',_0x30d8ea[_0x1934a4(0xa8)]),_0x30d8ea['ev'][_0x1934a4(0x101)](_0x1934a4(0xd8),_0x30d8ea[_0x1934a4(0xa7)]),_0x30d8ea['ev'][_0x1934a4(0x101)]('creds.update',_0x30d8ea[_0x1934a4(0xa6)])),_0x30d8ea[_0x1934a4(0xfc)]=global[_0x1934a4(0xc9)][_0x1934a4(0xfc)]+'',_0x30d8ea[_0x1934a4(0x98)]=global[_0x1934a4(0xc9)][_0x1934a4(0x98)]+'',_0x30d8ea[_0x1934a4(0xfd)]=global['conn'][_0x1934a4(0xfd)]+'',_0x30d8ea[_0x1934a4(0x9b)]=global[_0x1934a4(0xc9)][_0x1934a4(0x9b)]+'',_0x30d8ea[_0x1934a4(0xdf)]=_0x4e0dc5[_0x1934a4(0xdf)][_0x1934a4(0xd6)](_0x30d8ea),_0x30d8ea['participantsUpdate']=_0x4e0dc5[_0x1934a4(0xbb)]['bind'](_0x30d8ea),_0x30d8ea['groupsUpdate']=_0x4e0dc5[_0x1934a4(0xf6)][_0x1934a4(0xd6)](_0x30d8ea),_0x30d8ea[_0x1934a4(0xaa)]=_0x4e0dc5[_0x1934a4(0xe4)]['bind'](_0x30d8ea),_0x30d8ea[_0x1934a4(0xa7)]=_0x18959c['bind'](_0x30d8ea),_0x30d8ea[_0x1934a4(0xa6)]=_0x49e812[_0x1934a4(0xd6)](_0x30d8ea,!![]),_0x30d8ea['ev']['on'](_0x1934a4(0xe0),_0x30d8ea['handler']),_0x30d8ea['ev']['on'](_0x1934a4(0xdd),_0x30d8ea['participantsUpdate']),_0x30d8ea['ev']['on']('groups.update',_0x30d8ea[_0x1934a4(0xf6)]),_0x30d8ea['ev']['on']('message.delete',_0x30d8ea[_0x1934a4(0xaa)]),_0x30d8ea['ev']['on'](_0x1934a4(0xd8),_0x30d8ea[_0x1934a4(0xa7)]),_0x30d8ea['ev']['on'](_0x1934a4(0xfe),_0x30d8ea[_0x1934a4(0xa6)]),_0x204a7d=![],!![];};_0x4baf41(![]);}_0xf549a2();};joanimi[_0x585def(0xdb)]=[_0x585def(0xb1)],joanimi[_0x585def(0xcf)]=['تنصيب'],joanimi[_0x585def(0xf7)]=[_0x585def(0xb1),_0x585def(0xd1),_0x585def(0xe3),_0x585def(0xa3),_0x585def(0xff)],joanimi[_0x585def(0x9e)]=![];export default joanimi;function sleep(_0x449166){return new Promise(_0x37ae0e=>setTimeout(_0x37ae0e,_0x449166));}
+const {
+    useMultiFileAuthState,
+    DisconnectReason,
+    fetchLatestBaileysVersion, 
+    MessageRetryMap,
+    makeCacheableSignalKeyStore, 
+    jidNormalizedUser,
+    PHONENUMBER_MCC
+} = await import('@whiskeysockets/baileys');
+import moment from 'moment-timezone';
+import NodeCache from 'node-cache';
+import readline from 'readline';
+import qrcode from "qrcode";
+import crypto from 'crypto';
+import fs from "fs";
+import pino from 'pino';
+import * as ws from 'ws';
+const { CONNECTING } = ws;
+import { Boom } from '@hapi/boom';
+import { makeWASocket } from '../lib/simple.js';
+
+if (!Array.isArray(global.conns)) {
+    global.conns = [];
+}
+
+let handler = async (m, { conn: _conn, args, usedPrefix, command, isOwner }) => {
+    let parent = args[0] && args[0] === 'plz' ? _conn : await global.conn;
+    if (!((args[0] && args[0] === 'plz') || (await global.conn).user.jid === _conn.user.jid)) {
+        return m.reply(`هذا الأمر يمكن* *استخدامه فقط مع البوت الرئيسي! wa.me/${global.conn.user.jid.split`@`[0]}?text=${usedPrefix}code`);
+    }
+
+    async function serbot() {
+        let authFolderB = crypto.randomBytes(10).toString('hex').slice(0, 8);
+
+        if (!fs.existsSync("./serbot/" + authFolderB)) {
+            fs.mkdirSync("./serbot/" + authFolderB, { recursive: true });
+        }
+        if (args[0]) {
+            fs.writeFileSync("./serbot/" + authFolderB + "/creds.json", JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t'));
+        }
+
+        const { state, saveState, saveCreds } = await useMultiFileAuthState(`./serbot/${authFolderB}`);
+        const msgRetryCounterCache = new NodeCache();
+        const { version } = await fetchLatestBaileysVersion();
+        let phoneNumber = m.sender.split('@')[0];
+
+        const methodCodeQR = process.argv.includes("qr");
+        const methodCode = !!phoneNumber || process.argv.includes("code");
+        const MethodMobile = process.argv.includes("mobile");
+
+        const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+        const question = (texto) => new Promise((resolver) => rl.question(texto, resolver));
+
+        const connectionOptions = {
+            logger: pino({ level: 'silent' }),
+            printQRInTerminal: false,
+            mobile: MethodMobile, 
+            browser: ["Ubuntu", "Chrome", "20.0.04"], 
+            auth: {
+                creds: state.creds,
+                keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
+            },
+            markOnlineOnConnect: true, 
+            generateHighQualityLinkPreview: true, 
+            getMessage: async (clave) => {
+                let jid = jidNormalizedUser(clave.remoteJid);
+                let msg = await store.loadMessage(jid, clave.id);
+                return msg?.message || "";
+            },
+            msgRetryCounterCache,
+            defaultQueryTimeoutMs: undefined,   
+            version
+        };
+
+        let conn = makeWASocket(connectionOptions);
+
+        if (methodCode && !state.creds.registered) {
+            if (!phoneNumber) {
+                process.exit(0);
+            }
+            let cleanedNumber = phoneNumber.replace(/[^0-9]/g, '');
+            if (!Object.keys(PHONENUMBER_MCC).some(v => cleanedNumber.startsWith(v))) {
+                process.exit(0);
+            }
+
+            setTimeout(async () => {
+                let codeBot = await conn.requestPairingCode(cleanedNumber);
+                codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot;
+                let txt = ` –  *✪┋𝕄𝕆ℍ𝔸𝕄𝕄𝔼𝔻 𝔸𝔻𝔼𝕃 𖠐┋✪*\n\n`
+                    txt += `*┌  ✩  استخدم هذا الكود لتصبح بوت فرعي*\n`
+                    txt += `*│  ✩  الخطوات:*\n`
+                    txt += `*│  ✩  1 : اضغط على الثلاث نقاط*\n`
+                    txt += `*│  ✩  2 : اضغط على الأجهزة المرتبطة*\n`
+                    txt += `*│  ✩  3 : اختر ربط مع رقم الهاتف*\n` 
+                    txt += `*└  ✩  4 : اكتب الكود*\n\n`
+                    txt += `*ملاحظة: هذا الكود يعمل فقط على الرقم الذي طلبه*`;
+                await parent.reply(m.chat, txt, m);
+                await parent.reply(m.chat, codeBot, m);
+                rl.close();
+            }, 3000);
+        }
+
+        conn.isInit = false;
+        let isInit = true;
+
+        async function connectionUpdate(update) {
+            const { connection, lastDisconnect, isNewLogin, qr } = update;
+            if (isNewLogin) conn.isInit = true;
+            const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
+            if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
+                let i = global.conns.indexOf(conn);
+                if (i < 0) return console.log(await creloadHandler(true).catch(console.error));
+                delete global.conns[i];
+                global.conns.splice(i, 1);
+
+                if (code !== DisconnectReason.connectionClosed) {
+                    parent.sendMessage(m.chat, { text: "تم فقد الاتصال.." }, { quoted: m });
+                }
+            }
+
+            if (global.db.data == null) loadDatabase();
+
+            if (connection === 'open') {
+                conn.isInit = true;
+                global.conns.push(conn);
+                await parent.reply(m.chat, args[0] ? '*تم الاتصال بنجاح' : 'تم الاتصال بنجاح مع واتساب"\n\n*ملاحظة:* هذا مؤقت\n*إذا تم إعادة تشغيل البوت الرئيسي أو تعطيله، سيتم إيقاف جميع البوتات الفرعية أيضًا*\n\n*رقم البوت قد يتغير، احفظ هذا الرابط:*\n*-* https://whatsapp.com/channel/0029VagKvPX4dTnNxfbTnR45', m);
+                await sleep(5000);
+                if (args[0]) return;
+
+                await parent.reply(conn.user.jid, `*في المرة القادمة التي تتصل بها أرسل الرسالة التالية لتسجيل الدخول دون استخدام كود آخر*`, m);
+                await parent.sendMessage(conn.user.jid, { text: usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + authFolderB + "/creds.json"), "utf-8").toString("base64") }, { quoted: m });
+            }
+        }
+
+        setInterval(async () => {
+            if (!conn.user) {
+                try { conn.ws.close(); } catch { }
+                conn.ev.removeAllListeners();
+                let i = global.conns.indexOf(conn);
+                if (i < 0) return;
+                delete global.conns[i];
+                global.conns.splice(i, 1);
+            }
+        }, 60000);
+
+        let handler = await import('../handler.js');
+        let creloadHandler = async function (restatConn) {
+            try {
+                const Handler = await import(`../handler.js?update=${Date.now()}`).catch(console.error);
+                if (Object.keys(Handler || {}).length) handler = Handler;
+            } catch (e) {
+                console.error(e);
+            }
+            if (restatConn) {
+                try { conn.ws.close(); } catch { }
+                conn.ev.removeAllListeners();
+                conn = makeWASocket(connectionOptions);
+                isInit = true;
+            }
+
+            if (!isInit) {
+                conn.ev.off('messages.upsert', conn.handler);
+                conn.ev.off('connection.update', conn.connectionUpdate);
+                conn.ev.off('creds.update', conn.credsUpdate);
+            }
+
+            conn.handler = handler.handler.bind(conn);
+            conn.connectionUpdate = connectionUpdate.bind(conn);
+            conn.credsUpdate = saveCreds.bind(conn, true);
+
+            conn.ev.on('messages.upsert', conn.handler);
+            conn.ev.on('connection.update', conn.connectionUpdate);
+            conn.ev.on('creds.update', conn.credsUpdate);
+            isInit = false;
+            return true;
+        }
+        creloadHandler(false);
+    }
+    serbot();
+}
+
+handler.help = ['code'];
+handler.tags = ['serbot'];
+handler.command = ['code', 'تنصيب'];
+handler.rowner = false;
+
+export default handler;
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+          }
