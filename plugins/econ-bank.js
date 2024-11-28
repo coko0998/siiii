@@ -20,7 +20,7 @@ let handler = async (m, {conn, usedPrefix}) => {
         wealth = '*ملياردير💰*'
     }
 
-    conn.reply(m.chat, `> ˼🏦˹ الــــبــــنــــك╿↶
+    let message = `> ˼🏦˹ الــــبــــنــــك╿↶
 ╮──────────────────⟢ـ
 ┇〉🔮↜ ${username}
 ┇〉💵↜ دولار: ${user.bank}
@@ -32,9 +32,11 @@ let handler = async (m, {conn, usedPrefix}) => {
 ~اكتب~ " .إيداع " 
 > ⏎ لإيداع دولارات إلى البنك
 ~اكتب~ " .سحب " 
-> ⏎ لسحب دولارات من البنك
+> ⏎ لسحب دولارات من البنك`
 
-`, m, { mentions: [who] })
+    let image = 'https://qu.ax/CjhaH.jpg'
+
+    conn.sendMessage(m.chat, { image: { url: image }, caption: message }, { mentions: [who] })
 }
 
 handler.help = ['bank']
