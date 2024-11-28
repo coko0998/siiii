@@ -1,61 +1,78 @@
-import yts from 'yt-search'; 
-const handler = async (m, { conn, text, command }) => {
+const ytSearch = require('yt-search');
+const ytdl = require('ytdl-core');
+const youtubedl = require('youtube-dl-exec');
+const axios = require('axios');
+
+module.exports = {
+  name: 'mediaDownloader',
+  alias: ['اغنيه', 'أغنية', 'فيديو'],
+  category: 'media',
+  desc: 'تنزيل صوتيات وفيديوهات من YouTube.',
+  async exec(msg, conn, args, prefix, command) {
+    if (!args.length) {
+      return msg.reply(`يرجى كتابة اسم الفيديو بعد الأمر.`);
+    }
+
+    const query = args.join(' ');
+    msg.react('⏳');
+
     try {
-        if (!text) { 
-            return conn.reply(m.chat, `*💥 يرجى إدخال عنوان أو رابط الفيديو على YouTube.*\n\n*𔔢 مثال: فيديو جوني - Honeypie Animation*`, m);
+      // البحث عن الفيديو
+      const searchResults = await ytSearch(query);
+      if (!searchResults || !searchResults.videos.length) {
+        return msg.reply('لم يتم العثور على نتائج للفيديو المطلوب.');
+      }
+
+      const video = searchResults.videos[0];
+      const title = video.title;
+      const url = video.url;
+
+      // إعداد الخيارات بناءً على نوع الأمر
+      let isAudio = ['اغنيه', 'أغنية'].includes(command);
+      let isVideo = command === 'فيديو';
+
+      let fileType = isAudio ? 'audio' : 'video';
+      let ext = isAudio ? 'mp3' : 'mp4';
+
+      // إرسال التنزيل للمستخدم
+      const sendMedia = async (streamUrl) => {
+        const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}.${ext}`;
+
+        await conn.sendMessage(
+          msg.from,
+          {
+            document: { url: streamUrl },
+            mimetype: isAudio ? 'audio/mpeg' : 'video/mp4',
+            fileName,
+          },
+          { quoted: msg }
+        );
+      };
+
+      // محاولة تنزيل الملف
+      try {
+        const ytdlOptions = isAudio ? { filter: 'audioonly' } : {};
+        const streamUrl = ytdl(url, ytdlOptions).on('error', console.error);
+
+        // تحقق الحجم قبل الإرسال
+        const info = await ytdl.getInfo(url);
+        const size = info.formats.find((f) => f.container === ext)?.contentLength || 0;
+        const sizeMB = size / (1024 * 1024);
+
+        if (sizeMB > (isAudio ? 700 : 425)) {
+          return msg.reply(
+            `حجم الملف أكبر من الحد المسموح به (${isAudio ? '700MB' : '425MB'}).`
+          );
         }
-        
-        let isVideo = /فيديو/.test(command); // يتحقق إذا كان الأمر فيديو
-        let search = await yts(text);
-        let urls = search.all[0].url;
-        let body = `📽 *تفاصيل البحث:*\n\n> 🎬 *العنوان:* ${search.all[0].title}\n> 👀 *عدد المشاهدات:* ${search.all[0].views}\n> ⏱ *المدة الزمنية:* ${search.all[0].timestamp}\n> 🗓 *تم الرفع منذ:* ${search.all[0].ago}\n> 🔗 *الرابط:* ${urls}\n\n📽 *جاري إرسال ${isVideo ? 'الفيديو' : 'الصوت'}... الرجاء الانتظار.*`;
 
-        let sentMessage = await conn.sendMessage(m.chat, { 
-            image: { url: search.all[0].thumbnail }, 
-            caption: body,
-            quoted: m 
-        });
-        
-        let res = await dl_vid(urls); // تنزيل الفيديو/الصوت
-        let type = isVideo ? 'video' : 'audio';
-        let video = res.data.mp4;
-        let audio = res.data.mp3;
-
-        await conn.sendMessage(m.chat, { 
-            [type]: { url: isVideo ? video : audio }, 
-            gifPlayback: false, 
-            mimetype: isVideo ? "video/mp4" : "audio/mpeg" 
-        }, { quoted: m });
-
-    } catch(error) {
-        conn.reply(m.chat, `حدث خطأ أثناء التحميل.\nالتفاصيل: ${error}.`, m);
+        await sendMedia(streamUrl);
+      } catch (err) {
+        console.error('خطأ أثناء التنزيل باستخدام ytdl:', err);
+        return msg.reply('تعذر تنزيل الملف.');
+      }
+    } catch (error) {
+      console.error('خطأ أثناء البحث أو المعالجة:', error);
+      msg.reply('حدث خطأ أثناء محاولة تنفيذ الطلب.');
     }
+  },
 };
-
-handler.command = ['فيديو', 'اغنيه', 'اغنية']; // الأوامر التي يتم تفعيلها
-handler.help = ['فيديو', 'اغنيه', 'اغنية'];
-handler.tags = ['descargas'];
-handler.group = true;
-export default handler;
-
-// وظيفة تنزيل الفيديو/الصوت
-async function dl_vid(url) {
-    const response = await fetch('https://shinoa.us.kg/api/download/ytdl', {
-        method: 'POST',
-        headers: {
-            'accept': '*/*',
-            'api_key': 'free',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            text: url,
-        })
-    });
-
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-}
