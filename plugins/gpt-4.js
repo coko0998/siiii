@@ -1,50 +1,68 @@
-import fetch from "node-fetch"
+let axios = require('axios');
 
-let handler = async (m, {
-    conn,
-    args,
-    usedPrefix,
-    command
-}) => {
-    let text
-    if (args.length >= 1) {
-        text = args.slice(0).join(" ")
-    } else if (m.quoted && m.quoted.text) {
-        text = m.quoted.text
-    } else throw "*〄↞┇الذكاء الاصطناعي اسأله اي سؤال تريده مثال :┇*\n\n*┇.بوت متى توفي النبي صلى الله عليه وسلم┇◇*"
-    await m.reply(wait)
-    const messages = [
-    { role: 'system', content: 'You are a helpful assistant.' },
-    { role: 'user', content: text },
-  ];
-    try {
-        let res = await chatWithGPT(messages)
-        await m.reply(res.choices[0].message.content)
-    } catch (e) {
-        await m.reply('error')
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    conn.sessionAI = conn.sessionAI ? conn.sessionAI : {};
+
+    if (!text) throw `🚩 ${usedPrefix + command} *enable/disable*`;
+
+    if (text === "enable") {
+        conn.sessionAI[m.sender] = { sessionChat: [] };
+        m.reply("Success create sessions chat!");
+    } else if (text === "disable") {
+        delete conn.sessionAI[m.sender];
+        m.reply("Success delete sessions chat!");
     }
-}
-handler.help = ["بوت"]
-handler.tags = ["ai"];
-handler.command = /^(بوت)$/i
+};
 
-export default handler
+handler.before = async (m, { conn }) => {
+    conn.sessionAI = conn.sessionAI ? conn.sessionAI : {};
+    if (m.isBaileys && m.fromMe) return;
+    if (!m.text) return;
+    if (!conn.sessionAI[m.sender]) return;
+    if ([".", "#", "!", "/", "\\"].some(prefix => m.text.startsWith(prefix))) return;
 
-/* New Line */
-async function chatWithGPT(messages) {
-    try {
-        const response = await fetch("https://chatbot-ji1z.onrender.com/chatbot-ji1z", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ messages }),
-        });
+    if (conn.sessionAI[m.sender] && m.text) {    
+        const previousMessages = conn.sessionAI[m.sender].sessionChat || [];
+        
+       // ubah prompt nya di sini
+        const messages = [
+            { role: "system", content: "kamu adalah BTCH, Seorang Asisten pribadi yang di buat oleh BOTCAHX yang siap membantu kapan pun!" },
+            { role: "assistant", content: `Halo! Ada yang bisa BTCH bantu hari ini?` },
+            ...previousMessages.map((msg, i) => ({ role: i % 2 === 0 ? 'user' : 'assistant', content: msg })),
+            { role: "user", content: m.text }
+        ];
 
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error("Error fetching data:", error);
-        throw error;
+        try {
+            const chat = async function(messages) {
+                return new Promise(async (resolve, reject) => {
+                    try {
+                        const { data } = await axios.post('https://widipe.com/post/gpt-prompt', { messages });
+                        resolve(data);
+                    } catch (error) {
+                        reject(error);
+                    }
+                });
+            };
+
+            let res = await chat(messages);
+            if (res && res.result) {
+                await m.reply(res.result);
+                conn.sessionAI[m.sender].sessionChat = [
+                    ...conn.sessionAI[m.sender].sessionChat,
+                    m.text,
+                    res.result
+                ];
+            } else {
+                m.reply("Kesalahan dalam mengambil data");
+            }
+        } catch (error) {
+            throw error;
+        }
     }
-}
+};
+
+handler.command = ['بوت'];
+handler.tags = ['بوت'];
+handler.help = ['autoai *enable/disable*'];
+
+module.exports = handler;
