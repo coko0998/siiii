@@ -1,78 +1,77 @@
-const ytSearch = require('yt-search');
-const ytdl = require('ytdl-core');
-const youtubedl = require('youtube-dl-exec');
-const axios = require('axios');
+import ytdl from 'ytdl-core';
+import yts from 'yt-search';
+import fs from 'fs';
+import { pipeline } from 'stream';
+import { promisify } from 'util';
+import os from 'os';
 
-module.exports = {
-  name: 'mediaDownloader',
-  alias: ['اغنيه', 'أغنية', 'فيديو'],
-  category: 'media',
-  desc: 'تنزيل صوتيات وفيديوهات من YouTube.',
-  async exec(msg, conn, args, prefix, command) {
-    if (!args.length) {
-      return msg.reply(`يرجى كتابة اسم الفيديو بعد الأمر.`);
-    }
+const streamPipeline = promisify(pipeline);
 
-    const query = args.join(' ');
-    msg.react('⏳');
+var handler = async (m, { conn, command, text, usedPrefix }) => {
+  if (!text) throw `مثال : \n ${usedPrefix}${command} midle of night`;
 
-    try {
-      // البحث عن الفيديو
-      const searchResults = await ytSearch(query);
-      if (!searchResults || !searchResults.videos.length) {
-        return msg.reply('لم يتم العثور على نتائج للفيديو المطلوب.');
+  let search = await yts(text);
+  let vid = search.videos[Math.floor(Math.random() * search.videos.length)];
+  if (!search) throw 'Video Not Found, Try Another Title';
+  let { title, thumbnail, timestamp, views, ago, url } = vid;
+  let wm = '𝐌𝐈𝐃𝐎-𝐁𝐎𝐓'; //حط اسم بوتك
+
+  let captvid = `💝 جاري التحميل ♥`;
+
+  conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
+
+
+  const audioStream = ytdl(url, {
+    filter: 'audioonly',
+    quality: 'highestaudio',
+  });
+
+  // Get the path to the system's temporary directory
+  const tmpDir = os.tmpdir();
+
+  // Create writable stream in the temporary directory
+  const writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
+
+  // Start the download
+  await streamPipeline(audioStream, writableStream);
+
+  let doc = {
+    audio: {
+      url: `${tmpDir}/${title}.mp3`
+    },
+    mimetype: 'audio/mp4',
+    fileName: `${title}`,
+    contextInfo: {
+      externalAdReply: {
+        showAdAttribution: true,
+        mediaType: 2,
+        mediaUrl: url,
+        title: title,
+        body: wm,
+        sourceUrl: url,
+        thumbnail: await (await conn.getFile(thumbnail)).data
       }
-
-      const video = searchResults.videos[0];
-      const title = video.title;
-      const url = video.url;
-
-      // إعداد الخيارات بناءً على نوع الأمر
-      let isAudio = ['اغنيه', 'أغنية'].includes(command);
-      let isVideo = command === 'فيديو';
-
-      let fileType = isAudio ? 'audio' : 'video';
-      let ext = isAudio ? 'mp3' : 'mp4';
-
-      // إرسال التنزيل للمستخدم
-      const sendMedia = async (streamUrl) => {
-        const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}.${ext}`;
-
-        await conn.sendMessage(
-          msg.from,
-          {
-            document: { url: streamUrl },
-            mimetype: isAudio ? 'audio/mpeg' : 'video/mp4',
-            fileName,
-          },
-          { quoted: msg }
-        );
-      };
-
-      // محاولة تنزيل الملف
-      try {
-        const ytdlOptions = isAudio ? { filter: 'audioonly' } : {};
-        const streamUrl = ytdl(url, ytdlOptions).on('error', console.error);
-
-        // تحقق الحجم قبل الإرسال
-        const info = await ytdl.getInfo(url);
-        const size = info.formats.find((f) => f.container === ext)?.contentLength || 0;
-        const sizeMB = size / (1024 * 1024);
-
-        if (sizeMB > (isAudio ? 700 : 425)) {
-          return msg.reply(
-            `حجم الملف أكبر من الحد المسموح به (${isAudio ? '700MB' : '425MB'}).`
-          );
-        }
-
-        await sendMedia(streamUrl);
-      } catch (err) {
-        console.error('خطأ أثناء التنزيل باستخدام ytdl:', err);
-        return msg.reply('تعذر تنزيل الملف.');
-      }
-    } catch (error) {
-      console.error('خطأ أثناء البحث أو المعالجة:', error);
-      msg.reply('حدث خطأ أثناء محاولة تنفيذ الطلب.');
     }
-  },
+  };
+
+  await conn.sendMessage(m.chat, doc, { quoted: m });
+
+  // Delete the audio file
+  fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
+    if (err) {
+      console.error(`Failed to delete audio file: ${err}`);
+    } else {
+      console.log(`Deleted audio file: ${tmpDir}/${title}.mp3`);
+    }
+  });
 };
+
+handler.help = ['play'].map((v) => v + ' <query>');
+handler.tags = ['downloader'];
+handler.command = ['mp3', 'songs', 'ytmp3doc','اغنيه']
+
+handler.exp = 0;
+handler.diamond = false;
+
+export default handler;
+    
